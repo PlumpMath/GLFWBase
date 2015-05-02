@@ -20,6 +20,7 @@
 		030BB20B1AF4F23D00F845EF /* Basic.v.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 030BB20A1AF4F23D00F845EF /* Basic.v.glsl */; };
 		030BB20D1AF4F27000F845EF /* Basic.f.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 030BB20C1AF4F27000F845EF /* Basic.f.glsl */; };
 		030BB2111AF4F36900F845EF /* TextureLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 030BB20F1AF4F36900F845EF /* TextureLoader.cpp */; };
+		030BB2141AF4F90700F845EF /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 030BB2121AF4F90700F845EF /* Game.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		030BB20C1AF4F27000F845EF /* Basic.f.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Basic.f.glsl; sourceTree = "<group>"; };
 		030BB20F1AF4F36900F845EF /* TextureLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureLoader.cpp; sourceTree = "<group>"; };
 		030BB2101AF4F36900F845EF /* TextureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureLoader.h; sourceTree = "<group>"; };
+		030BB2121AF4F90700F845EF /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		030BB2131AF4F90700F845EF /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +84,7 @@
 		030BB1C71AF4ED5600F845EF /* GLFWBase */ = {
 			isa = PBXGroup;
 			children = (
-				030BB20E1AF4F32D00F845EF /* Resources */,
+				030BB20E1AF4F32D00F845EF /* Example */,
 				030BB1F71AF4EDDF00F845EF /* SOIL */,
 				030BB1F81AF4EDF000F845EF /* Utils */,
 				030BB1C91AF4ED5600F845EF /* Info.plist */,
@@ -120,15 +123,17 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		030BB20E1AF4F32D00F845EF /* Resources */ = {
+		030BB20E1AF4F32D00F845EF /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				030BB2131AF4F90700F845EF /* Game.h */,
+				030BB2121AF4F90700F845EF /* Game.cpp */,
 				030BB2031AF4EFC800F845EF /* blah.jpg */,
 				030BB2041AF4EFC800F845EF /* jelly.jpg */,
 				030BB20A1AF4F23D00F845EF /* Basic.v.glsl */,
 				030BB20C1AF4F27000F845EF /* Basic.f.glsl */,
 			);
-			name = Resources;
+			name = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				030BB2141AF4F90700F845EF /* Game.cpp in Sources */,
 				030BB2091AF4F0C200F845EF /* ShaderLoader.cpp in Sources */,
 				030BB1F41AF4EDDB00F845EF /* image_helper.c in Sources */,
 				030BB2111AF4F36900F845EF /* TextureLoader.cpp in Sources */,
