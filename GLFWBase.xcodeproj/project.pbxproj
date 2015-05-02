@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		030BB1CE1AF4ED5600F845EF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 030BB1CD1AF4ED5600F845EF /* main.cpp */; };
-		030BB1D01AF4ED5600F845EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 030BB1CF1AF4ED5600F845EF /* Images.xcassets */; };
-		030BB1DF1AF4ED5700F845EF /* GLFWBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 030BB1DE1AF4ED5700F845EF /* GLFWBaseTests.m */; };
 		030BB1EA1AF4EDC800F845EF /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 030BB1E91AF4EDC800F845EF /* ResourcePath.mm */; };
 		030BB1F41AF4EDDB00F845EF /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 030BB1EC1AF4EDDB00F845EF /* image_helper.c */; };
 		030BB1F51AF4EDDB00F845EF /* SOIL.c in Sources */ = {isa = PBXBuildFile; fileRef = 030BB1EE1AF4EDDB00F845EF /* SOIL.c */; };
@@ -18,27 +16,16 @@
 		030BB2021AF4EF3B00F845EF /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 030BB2011AF4EF3B00F845EF /* image_DXT.c */; };
 		030BB2051AF4EFC800F845EF /* blah.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 030BB2031AF4EFC800F845EF /* blah.jpg */; };
 		030BB2061AF4EFC800F845EF /* jelly.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 030BB2041AF4EFC800F845EF /* jelly.jpg */; };
-		030BB2091AF4F0C200F845EF /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 030BB2081AF4F0C200F845EF /* shader.cpp */; };
+		030BB2091AF4F0C200F845EF /* ShaderLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 030BB2081AF4F0C200F845EF /* ShaderLoader.cpp */; };
+		030BB20B1AF4F23D00F845EF /* Basic.v.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 030BB20A1AF4F23D00F845EF /* Basic.v.glsl */; };
+		030BB20D1AF4F27000F845EF /* Basic.f.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 030BB20C1AF4F27000F845EF /* Basic.f.glsl */; };
+		030BB2111AF4F36900F845EF /* TextureLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 030BB20F1AF4F36900F845EF /* TextureLoader.cpp */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		030BB1D91AF4ED5700F845EF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 030BB1BD1AF4ED5600F845EF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 030BB1C41AF4ED5600F845EF;
-			remoteInfo = GLFWBase;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		030BB1C51AF4ED5600F845EF /* GLFWBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLFWBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		030BB1C91AF4ED5600F845EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		030BB1CD1AF4ED5600F845EF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		030BB1CF1AF4ED5600F845EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		030BB1D81AF4ED5700F845EF /* GLFWBaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLFWBaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		030BB1DD1AF4ED5700F845EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		030BB1DE1AF4ED5700F845EF /* GLFWBaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLFWBaseTests.m; sourceTree = "<group>"; };
 		030BB1E81AF4EDC800F845EF /* ResourcePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourcePath.h; sourceTree = "<group>"; };
 		030BB1E91AF4EDC800F845EF /* ResourcePath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
 		030BB1EB1AF4EDDB00F845EF /* image_DXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image_DXT.h; sourceTree = "<group>"; };
@@ -54,8 +41,12 @@
 		030BB2011AF4EF3B00F845EF /* image_DXT.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_DXT.c; sourceTree = "<group>"; };
 		030BB2031AF4EFC800F845EF /* blah.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blah.jpg; sourceTree = "<group>"; };
 		030BB2041AF4EFC800F845EF /* jelly.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jelly.jpg; sourceTree = "<group>"; };
-		030BB2071AF4F0C200F845EF /* shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = shader.hpp; sourceTree = "<group>"; };
-		030BB2081AF4F0C200F845EF /* shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shader.cpp; sourceTree = "<group>"; };
+		030BB2071AF4F0C200F845EF /* ShaderLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderLoader.h; sourceTree = "<group>"; };
+		030BB2081AF4F0C200F845EF /* ShaderLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderLoader.cpp; sourceTree = "<group>"; };
+		030BB20A1AF4F23D00F845EF /* Basic.v.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Basic.v.glsl; sourceTree = "<group>"; };
+		030BB20C1AF4F27000F845EF /* Basic.f.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Basic.f.glsl; sourceTree = "<group>"; };
+		030BB20F1AF4F36900F845EF /* TextureLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureLoader.cpp; sourceTree = "<group>"; };
+		030BB2101AF4F36900F845EF /* TextureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureLoader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,13 +58,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		030BB1D51AF4ED5700F845EF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,7 +66,6 @@
 			children = (
 				030BB1F91AF4EE1400F845EF /* OpenGL.framework */,
 				030BB1C71AF4ED5600F845EF /* GLFWBase */,
-				030BB1DB1AF4ED5700F845EF /* GLFWBaseTests */,
 				030BB1C61AF4ED5600F845EF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				030BB1C51AF4ED5600F845EF /* GLFWBase.app */,
-				030BB1D81AF4ED5700F845EF /* GLFWBaseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,32 +81,13 @@
 		030BB1C71AF4ED5600F845EF /* GLFWBase */ = {
 			isa = PBXGroup;
 			children = (
+				030BB20E1AF4F32D00F845EF /* Resources */,
 				030BB1F71AF4EDDF00F845EF /* SOIL */,
 				030BB1F81AF4EDF000F845EF /* Utils */,
 				030BB1C91AF4ED5600F845EF /* Info.plist */,
 				030BB1CD1AF4ED5600F845EF /* main.cpp */,
-				030BB2031AF4EFC800F845EF /* blah.jpg */,
-				030BB2041AF4EFC800F845EF /* jelly.jpg */,
-				030BB1CF1AF4ED5600F845EF /* Images.xcassets */,
 			);
 			path = GLFWBase;
-			sourceTree = "<group>";
-		};
-		030BB1DB1AF4ED5700F845EF /* GLFWBaseTests */ = {
-			isa = PBXGroup;
-			children = (
-				030BB1DE1AF4ED5700F845EF /* GLFWBaseTests.m */,
-				030BB1DC1AF4ED5700F845EF /* Supporting Files */,
-			);
-			path = GLFWBaseTests;
-			sourceTree = "<group>";
-		};
-		030BB1DC1AF4ED5700F845EF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				030BB1DD1AF4ED5700F845EF /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		030BB1F71AF4EDDF00F845EF /* SOIL */ = {
@@ -147,12 +110,25 @@
 		030BB1F81AF4EDF000F845EF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				030BB2071AF4F0C200F845EF /* shader.hpp */,
-				030BB2081AF4F0C200F845EF /* shader.cpp */,
+				030BB2071AF4F0C200F845EF /* ShaderLoader.h */,
+				030BB2081AF4F0C200F845EF /* ShaderLoader.cpp */,
 				030BB1E81AF4EDC800F845EF /* ResourcePath.h */,
 				030BB1E91AF4EDC800F845EF /* ResourcePath.mm */,
+				030BB2101AF4F36900F845EF /* TextureLoader.h */,
+				030BB20F1AF4F36900F845EF /* TextureLoader.cpp */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		030BB20E1AF4F32D00F845EF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				030BB2031AF4EFC800F845EF /* blah.jpg */,
+				030BB2041AF4EFC800F845EF /* jelly.jpg */,
+				030BB20A1AF4F23D00F845EF /* Basic.v.glsl */,
+				030BB20C1AF4F27000F845EF /* Basic.f.glsl */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,24 +151,6 @@
 			productReference = 030BB1C51AF4ED5600F845EF /* GLFWBase.app */;
 			productType = "com.apple.product-type.application";
 		};
-		030BB1D71AF4ED5700F845EF /* GLFWBaseTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 030BB1E51AF4ED5700F845EF /* Build configuration list for PBXNativeTarget "GLFWBaseTests" */;
-			buildPhases = (
-				030BB1D41AF4ED5700F845EF /* Sources */,
-				030BB1D51AF4ED5700F845EF /* Frameworks */,
-				030BB1D61AF4ED5700F845EF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				030BB1DA1AF4ED5700F845EF /* PBXTargetDependency */,
-			);
-			name = GLFWBaseTests;
-			productName = GLFWBaseTests;
-			productReference = 030BB1D81AF4ED5700F845EF /* GLFWBaseTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -204,10 +162,6 @@
 				TargetAttributes = {
 					030BB1C41AF4ED5600F845EF = {
 						CreatedOnToolsVersion = 6.3.1;
-					};
-					030BB1D71AF4ED5700F845EF = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = 030BB1C41AF4ED5600F845EF;
 					};
 				};
 			};
@@ -225,7 +179,6 @@
 			projectRoot = "";
 			targets = (
 				030BB1C41AF4ED5600F845EF /* GLFWBase */,
-				030BB1D71AF4ED5700F845EF /* GLFWBaseTests */,
 			);
 		};
 /* End PBXProject section */
@@ -236,15 +189,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				030BB2061AF4EFC800F845EF /* jelly.jpg in Resources */,
+				030BB20D1AF4F27000F845EF /* Basic.f.glsl in Resources */,
 				030BB2051AF4EFC800F845EF /* blah.jpg in Resources */,
-				030BB1D01AF4ED5600F845EF /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		030BB1D61AF4ED5700F845EF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				030BB20B1AF4F23D00F845EF /* Basic.v.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +202,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				030BB2091AF4F0C200F845EF /* shader.cpp in Sources */,
+				030BB2091AF4F0C200F845EF /* ShaderLoader.cpp in Sources */,
 				030BB1F41AF4EDDB00F845EF /* image_helper.c in Sources */,
+				030BB2111AF4F36900F845EF /* TextureLoader.cpp in Sources */,
 				030BB1F61AF4EDDB00F845EF /* stb_image_aug.c in Sources */,
 				030BB2021AF4EF3B00F845EF /* image_DXT.c in Sources */,
 				030BB1EA1AF4EDC800F845EF /* ResourcePath.mm in Sources */,
@@ -265,23 +213,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		030BB1D41AF4ED5700F845EF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				030BB1DF1AF4ED5700F845EF /* GLFWBaseTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		030BB1DA1AF4ED5700F845EF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 030BB1C41AF4ED5600F845EF /* GLFWBase */;
-			targetProxy = 030BB1D91AF4ED5700F845EF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		030BB1E01AF4ED5700F845EF /* Debug */ = {
@@ -421,42 +353,6 @@
 			};
 			name = Release;
 		};
-		030BB1E61AF4ED5700F845EF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GLFWBaseTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GLFWBase.app/Contents/MacOS/GLFWBase";
-			};
-			name = Debug;
-		};
-		030BB1E71AF4ED5700F845EF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GLFWBaseTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GLFWBase.app/Contents/MacOS/GLFWBase";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -474,14 +370,6 @@
 			buildConfigurations = (
 				030BB1E31AF4ED5700F845EF /* Debug */,
 				030BB1E41AF4ED5700F845EF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		030BB1E51AF4ED5700F845EF /* Build configuration list for PBXNativeTarget "GLFWBaseTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				030BB1E61AF4ED5700F845EF /* Debug */,
-				030BB1E71AF4ED5700F845EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
