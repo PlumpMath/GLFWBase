@@ -270,6 +270,7 @@
 				OTHER_LDFLAGS = (
 					"-lglew",
 					"-lglfw",
+					"-lglm",
 				);
 				SDKROOT = macosx;
 			};
@@ -316,6 +317,7 @@
 				OTHER_LDFLAGS = (
 					"-lglew",
 					"-lglfw",
+					"-lglm",
 				);
 				SDKROOT = macosx;
 			};

@@ -3,6 +3,10 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #include "ResourcePath.h"
 #include "ShaderLoader.h"
 #include "TextureLoader.h"
@@ -34,8 +38,8 @@ void Game::run() {
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
     glBufferData(GL_ARRAY_BUFFER, sizeof(triangle_vertices), triangle_vertices, GL_STATIC_DRAW);
     
-    GLuint texture1 = LoadTexture("jelly");
-    GLuint texture2 = LoadTexture("blah");
+    GLuint texture1 = LoadTexture("blah");
+    //GLuint texture2 = LoadTexture("jelly");
     
     glBindTexture(GL_TEXTURE_2D, 0);
     glBindTexture(GL_TEXTURE_2D, texture1);
@@ -44,9 +48,14 @@ void Game::run() {
     
     GLuint uniform_offset = glGetUniformLocation(program, "offset");
     
+    GLuint uniform_transform = glGetUniformLocation(program, "transform");
+    
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
+        glm::mat4 trans;
+        trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(1.0f, 1.0f, 0.0f));
+        
         glClear(GL_COLOR_BUFFER_BIT);
         glUseProgram(program);
         
@@ -66,13 +75,15 @@ void Game::run() {
                               (const void*)(3 * sizeof(float)));
         glEnableVertexAttribArray(1);
         
-        glUniform2f(uniform_offset, -0.2f, -0.2f);
+        glUniformMatrix4fv(uniform_transform, 1, GL_FALSE, glm::value_ptr(trans));
+        
+        glUniform2f(uniform_offset, 0, 0);
         glBindTexture(GL_TEXTURE_2D, texture1);
         glDrawArrays(GL_TRIANGLES, 0, 20);
         
-        glUniform2f(uniform_offset, 0.3f, 0.0f);
-        glBindTexture(GL_TEXTURE_2D, texture2);
-        glDrawArrays(GL_TRIANGLES, 0, 20);
+//        glUniform2f(uniform_offset, 0.3f, 0.0f);
+//        glBindTexture(GL_TEXTURE_2D, texture2);
+//        glDrawArrays(GL_TRIANGLES, 0, 20);
         
         glDisableVertexAttribArray(0);
         glDisableVertexAttribArray(1);
