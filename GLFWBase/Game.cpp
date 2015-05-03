@@ -16,77 +16,46 @@ Game::Game(GLFWwindow *window) {
 }
 
 void Game::run() {
-    GLuint program = createShaderProgram(getResourcePath("Basic.v", "glsl").c_str(),
-                                         getResourcePath("Basic.f", "glsl").c_str());
-    
-    static const GLfloat triangle_vertices[] = {
-        0.5f,   0.5f, 0.0f,   1.0f, 0.0f,
-        0.5f,  -0.5f, 0.0f,   1.0f, 1.0f,
-        -0.5f, -0.5f, 0.0f,   0.0f, 1.0f,
-        
-        -0.5f, -0.5f, 0.0f,   0.0f, 1.0f,
-        0.5f,   0.5f, 0.0f,   1.0f, 0.0f,
-        -0.5f,  0.5f, 0.0f,   0.0f, 0.0f
-    };
     
     GLuint vao;
     glGenVertexArrays(1, &vao);
     glBindVertexArray(vao);
     
-    GLuint vbo;
-    glGenBuffers(1, &vbo);
-    glBindBuffer(GL_ARRAY_BUFFER, vbo);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(triangle_vertices), triangle_vertices, GL_STATIC_DRAW);
+    GLuint program = createShaderProgram(getResourcePath("Mesh.v", "glsl").c_str(),
+                                         getResourcePath("Mesh.f", "glsl").c_str());
     
-    GLuint texture1 = LoadTexture("blah");
-    //GLuint texture2 = LoadTexture("jelly");
-    
-    glBindTexture(GL_TEXTURE_2D, 0);
-    glBindTexture(GL_TEXTURE_2D, texture1);
-    
-    glClearColor(0.98, 0.98, 0.98, 1.0);
-    
-    GLuint uniform_offset = glGetUniformLocation(program, "offset");
+    static const GLfloat verts[] = {
+        0.5f,   0.5f, 0.0f,
+        0.5f,  -0.5f, 0.0f,
+        -0.5f, -0.5f, 0.0f,
+    };
     
     GLuint uniform_transform = glGetUniformLocation(program, "transform");
     
-    /* Loop until the user closes the window */
-    while (!glfwWindowShouldClose(window))
-    {
-        glm::mat4 trans;
-        trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(1.0f, 1.0f, 0.0f));
-        
+    GLuint vbo;
+    glGenBuffers(1, &vbo);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(verts), verts, GL_STATIC_DRAW);
+    
+    glClearColor(0.98, 0.98, 0.98, 1.0);
+    
+    while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT);
+        
         glUseProgram(program);
         
         glVertexAttribPointer(0,                 // attribute nr
-                              3,                 // number of elements per vertex, here (x,y)
+                              3,                 // number of elements per vertex
                               GL_FLOAT,          // the type of each element
                               GL_FALSE,          // take our values as-is
-                              5 * sizeof(float), // size of all attributes
+                              3 * sizeof(float), // size of all attributes
                               0);                // offset
         glEnableVertexAttribArray(0);
         
-        glVertexAttribPointer(1,
-                              2,
-                              GL_FLOAT,
-                              GL_FALSE,
-                              5 * sizeof(float),
-                              (const void*)(3 * sizeof(float)));
-        glEnableVertexAttribArray(1);
+        glm::mat4 transform = glm::rotate(glm::mat4(), (float)glfwGetTime(), glm::vec3(1.0f, 1.0f, 0.0f));
+        glUniformMatrix4fv(uniform_transform, 1, GL_FALSE, glm::value_ptr(transform));
         
-        glUniformMatrix4fv(uniform_transform, 1, GL_FALSE, glm::value_ptr(trans));
-        
-        glUniform2f(uniform_offset, 0, 0);
-        glBindTexture(GL_TEXTURE_2D, texture1);
         glDrawArrays(GL_TRIANGLES, 0, 20);
-        
-//        glUniform2f(uniform_offset, 0.3f, 0.0f);
-//        glBindTexture(GL_TEXTURE_2D, texture2);
-//        glDrawArrays(GL_TRIANGLES, 0, 20);
-        
-        glDisableVertexAttribArray(0);
-        glDisableVertexAttribArray(1);
         
         glfwSwapBuffers(window);
         glfwPollEvents();

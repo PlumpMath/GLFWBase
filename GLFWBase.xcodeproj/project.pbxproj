@@ -21,6 +21,8 @@
 		030BB20D1AF4F27000F845EF /* Basic.f.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 030BB20C1AF4F27000F845EF /* Basic.f.glsl */; };
 		030BB2111AF4F36900F845EF /* TextureLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 030BB20F1AF4F36900F845EF /* TextureLoader.cpp */; };
 		030BB2141AF4F90700F845EF /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 030BB2121AF4F90700F845EF /* Game.cpp */; };
+		030BB2181AF59FE800F845EF /* Mesh.f.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 030BB2161AF59FE800F845EF /* Mesh.f.glsl */; };
+		030BB2191AF59FE800F845EF /* Mesh.v.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 030BB2171AF59FE800F845EF /* Mesh.v.glsl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,9 @@
 		030BB2101AF4F36900F845EF /* TextureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureLoader.h; sourceTree = "<group>"; };
 		030BB2121AF4F90700F845EF /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		030BB2131AF4F90700F845EF /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		030BB2151AF59D8000F845EF /* TextureExample */ = {isa = PBXFileReference; lastKnownFileType = text; path = TextureExample; sourceTree = "<group>"; };
+		030BB2161AF59FE800F845EF /* Mesh.f.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Mesh.f.glsl; sourceTree = "<group>"; };
+		030BB2171AF59FE800F845EF /* Mesh.v.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Mesh.v.glsl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +137,9 @@
 				030BB2041AF4EFC800F845EF /* jelly.jpg */,
 				030BB20A1AF4F23D00F845EF /* Basic.v.glsl */,
 				030BB20C1AF4F27000F845EF /* Basic.f.glsl */,
+				030BB2171AF59FE800F845EF /* Mesh.v.glsl */,
+				030BB2161AF59FE800F845EF /* Mesh.f.glsl */,
+				030BB2151AF59D8000F845EF /* TextureExample */,
 			);
 			name = Example;
 			sourceTree = "<group>";
@@ -197,6 +205,8 @@
 				030BB20D1AF4F27000F845EF /* Basic.f.glsl in Resources */,
 				030BB2051AF4EFC800F845EF /* blah.jpg in Resources */,
 				030BB20B1AF4F23D00F845EF /* Basic.v.glsl in Resources */,
+				030BB2181AF59FE800F845EF /* Mesh.f.glsl in Resources */,
+				030BB2191AF59FE800F845EF /* Mesh.v.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
