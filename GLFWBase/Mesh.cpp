@@ -47,10 +47,11 @@ void Mesh::activate() {
     glEnableVertexAttribArray(0);
 }
 
-void Mesh::draw(glm::vec3 position, glm::vec4 color) {
-    glm::mat4 transform;
+void Mesh::draw(glm::vec3 position, glm::vec4 color, glm::mat4x4 viewMatrix) {
+    glm::mat4 transform = viewMatrix;
     transform = glm::translate(transform, position);
     transform = glm::rotate(transform, (float)glfwGetTime(), glm::vec3(1.0f, 1.0f, 0.0f));
+    //transform = transform;
     glUniformMatrix4fv(uniform_transform, 1, GL_FALSE, glm::value_ptr(transform));
     glUniform4fv(uniform_color, 1, glm::value_ptr(color));
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 12);

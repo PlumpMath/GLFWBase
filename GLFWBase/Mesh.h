@@ -13,6 +13,6 @@ public:
     ~Mesh();
     void activate();
     void deactivate();
-    void draw(glm::vec3 position, glm::vec4 color);
+    void draw(glm::vec3 position, glm::vec4 color, glm::mat4x4 viewMatrix);
 };
 
