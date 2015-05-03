@@ -22,6 +22,12 @@ static void cursorMoved(GLFWwindow* window, double xpos, double ypos) {
     fov = (xpos / 640.0f) * 3.14f;
 }
 
+float windowRatio(GLFWwindow *window) {
+    int w, h;
+    glfwGetWindowSize(window, &w, &h);
+    return (float)w / (float)h;
+}
+
 void Game::run() {
     
     GLuint vao;
@@ -42,7 +48,7 @@ void Game::run() {
         glm::mat4 cam = glm::lookAt(glm::vec3(0.0f, 0.0f, 5.0f),
                                     glm::vec3(0.0f, 0.0f, 0.0f),
                                     glm::vec3(0.0f, 1.0f, 0.0f));
-        glm::mat4 proj = glm::perspective(fov, (float)640/(float)480, 0.1f, 100.0f);
+        glm::mat4 proj = glm::perspective(fov, windowRatio(window), 0.1f, 100.0f);
         glm::mat4 view = proj * cam;
         
         m1.draw(glm::vec3(-1.0, 0.0, 0.0), glm::vec4(0.2, 0.5, 0.9, 1.0), view);
