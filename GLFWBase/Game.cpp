@@ -28,6 +28,12 @@ void Game::run() {
         0.5f,   0.5f, 0.0f,
         0.5f,  -0.5f, 0.0f,
         -0.5f, -0.5f, 0.0f,
+        -0.5f,  0.5f, 0.0f,
+    };
+    
+    GLuint indices[] = {
+        0, 1, 3,
+        1, 2, 3
     };
     
     GLuint uniform_transform = glGetUniformLocation(program, "transform");
@@ -37,6 +43,12 @@ void Game::run() {
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
     glBufferData(GL_ARRAY_BUFFER, sizeof(verts), verts, GL_STATIC_DRAW);
     
+    GLuint ebo;
+    glGenBuffers(1, &ebo);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+    
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glClearColor(0.98, 0.98, 0.98, 1.0);
     
     while (!glfwWindowShouldClose(window)) {
@@ -55,7 +67,10 @@ void Game::run() {
         glm::mat4 transform = glm::rotate(glm::mat4(), (float)glfwGetTime(), glm::vec3(1.0f, 1.0f, 0.0f));
         glUniformMatrix4fv(uniform_transform, 1, GL_FALSE, glm::value_ptr(transform));
         
-        glDrawArrays(GL_TRIANGLES, 0, 20);
+//        glDrawArrays(GL_TRIANGLES, 0, 12);
+        
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         
         glfwSwapBuffers(window);
         glfwPollEvents();
