@@ -10,6 +10,7 @@
 #include "ResourcePath.h"
 #include "ShaderLoader.h"
 #include "TextureLoader.h"
+#include "Mesh.h"
 
 Game::Game(GLFWwindow *window) {
     this->window = window;
@@ -21,47 +22,18 @@ void Game::run() {
     glGenVertexArrays(1, &vao);
     glBindVertexArray(vao);
     
-    GLuint mesh_program = createShaderProgram(getResourcePath("Mesh.v", "glsl").c_str(),
-                                         getResourcePath("Mesh.f", "glsl").c_str());
-    
-    static const GLfloat verts[] = {
-        -0.5f, -0.5f, 0.0f,
-        -0.5f,  0.5f, 0.0f,
-        0.5f,  -0.5f, 0.0f,
-        0.5f,   0.5f, 0.0f,
-    };
-    
-    GLuint uniform_transform = glGetUniformLocation(mesh_program, "transform");
-    
-    GLuint vbo;
-    glGenBuffers(1, &vbo);
-    glBindBuffer(GL_ARRAY_BUFFER, vbo);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(verts), verts, GL_STATIC_DRAW);
-
     glClearColor(0.98, 0.98, 0.98, 1.0);
+    
+    Mesh m1;
+    m1.activate();
     
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT);
         
-        glUseProgram(mesh_program);
-        
-        glVertexAttribPointer(0,                 // attribute nr
-                              3,                 // number of elements per vertex
-                              GL_FLOAT,          // the type of each element
-                              GL_FALSE,          // take our values as-is
-                              3 * sizeof(float), // size of all attributes
-                              0);                // offset
-        glEnableVertexAttribArray(0);
-        
-        glm::mat4 transform = glm::rotate(glm::mat4(), (float)glfwGetTime(), glm::vec3(1.0f, 1.0f, 0.0f));
-        glUniformMatrix4fv(uniform_transform, 1, GL_FALSE, glm::value_ptr(transform));
-        
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vbo);
-        glDrawArrays(GL_TRIANGLE_STRIP, 0, 12);
+        m1.draw(glm::vec3(-0.2,  0.0, 0.0), glm::vec4(0.2, 0.7, 0.9, 1.0));
+        m1.draw(glm::vec3( 0.3, -0.1, 0.0), glm::vec4(0.9, 0.3, 0.5, 1.0));
         
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
-    
-    glDeleteProgram(mesh_program);
 }

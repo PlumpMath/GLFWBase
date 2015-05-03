@@ -1,7 +1,9 @@
 #version 330 core
 
+in vec4 passed_color;
+
 out vec4 color;
 
 void main(void) {
-    color = vec4(0.9, 0.2, 0.2, 1.0f);
+    color = passed_color;
 }

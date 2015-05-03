@@ -23,6 +23,7 @@
 		030BB2141AF4F90700F845EF /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 030BB2121AF4F90700F845EF /* Game.cpp */; };
 		030BB2181AF59FE800F845EF /* Mesh.f.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 030BB2161AF59FE800F845EF /* Mesh.f.glsl */; };
 		030BB2191AF59FE800F845EF /* Mesh.v.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 030BB2171AF59FE800F845EF /* Mesh.v.glsl */; };
+		03796CB31AF6110600A8247C /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03796CB11AF6110600A8247C /* Mesh.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,8 @@
 		030BB2151AF59D8000F845EF /* TextureExample */ = {isa = PBXFileReference; lastKnownFileType = text; path = TextureExample; sourceTree = "<group>"; };
 		030BB2161AF59FE800F845EF /* Mesh.f.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Mesh.f.glsl; sourceTree = "<group>"; };
 		030BB2171AF59FE800F845EF /* Mesh.v.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Mesh.v.glsl; sourceTree = "<group>"; };
+		03796CB11AF6110600A8247C /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
+		03796CB21AF6110600A8247C /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 				030BB2171AF59FE800F845EF /* Mesh.v.glsl */,
 				030BB2161AF59FE800F845EF /* Mesh.f.glsl */,
 				030BB2151AF59D8000F845EF /* TextureExample */,
+				03796CB21AF6110600A8247C /* Mesh.h */,
+				03796CB11AF6110600A8247C /* Mesh.cpp */,
 			);
 			name = Example;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 				030BB2091AF4F0C200F845EF /* ShaderLoader.cpp in Sources */,
 				030BB1F41AF4EDDB00F845EF /* image_helper.c in Sources */,
 				030BB2111AF4F36900F845EF /* TextureLoader.cpp in Sources */,
+				03796CB31AF6110600A8247C /* Mesh.cpp in Sources */,
 				030BB1F61AF4EDDB00F845EF /* stb_image_aug.c in Sources */,
 				030BB2021AF4EF3B00F845EF /* image_DXT.c in Sources */,
 				030BB1EA1AF4EDC800F845EF /* ResourcePath.mm in Sources */,
@@ -390,6 +396,7 @@
 				030BB1E41AF4ED5700F845EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
